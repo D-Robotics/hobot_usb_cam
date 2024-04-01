@@ -1,5 +1,10 @@
 # Changelog for package hobot_usb_cam
 
+tros_2.2.0 (2024-04-01)
+------------------
+1. 适配ros2 humble零拷贝。
+2. 新增中英双语README。
+
 tros_2.1.2 (2024-3-4)
 ------------------
 1. 发布图像编码方式`pixel_format`配置项删除`mjpeg-compressed`配置选项，统一使用`mjpeg`配置选项指定发布`jpeg`压缩格式图片。
