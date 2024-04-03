@@ -217,7 +217,7 @@ void HobotUsbCamNode::init()
 
     hbmem_image_pub_1080_ =
           this->create_publisher<hbm_img_msgs::msg::HbmMsg1080P>(
-              "hbmem_img", 5);
+              "hbmem_img", rclcpp::SensorDataQoS());
   }
   // TODO(lucasw) should this check a little faster than expected frame rate?
   // TODO(lucasw) how to do small than ms, or fractional ms- std::chrono::nanoseconds?
