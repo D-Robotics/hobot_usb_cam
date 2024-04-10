@@ -21,21 +21,39 @@ hobot_usb_cam从USB摄像头采集图像数据，以ROS标准图像消息或者�
 
 启动RDK后，通过终端或者VNC连接RDK，复制如下命令在RDK的系统上运行，完成相关Node的安装。
 
+tros foxy 版本
 ```bash
 sudo apt update
 sudo apt install -y tros-hobot-usb-cam
+```
+
+tros humble 版本
+```bash
+sudo apt update
+sudo apt install -y ros-humble-ros-base
+sudo apt install -y tros-humble-hobot-usb-cam
 ```
 
 ## 使用USB摄像头发布图片
 
 在RDK系统的终端中运行如下指令，启动已连接的相机：
 
+tros foxy 版本
 ```bash
 # 配置 tros.b 环境：
 source /opt/tros/setup.bash
 # launch 方式启动，指定了USB摄像头设备名称为/dev/video8
 ros2 launch hobot_usb_cam hobot_usb_cam.launch.py usb_video_device:=/dev/video8
 ```
+
+tros humble 版本
+```bash
+# 配置 tros.b humble 环境：
+source /opt/tros/humble/setup.bash
+# launch 方式启动，指定了USB摄像头设备名称为/dev/video8
+ros2 launch hobot_usb_cam hobot_usb_cam.launch.py usb_video_device:=/dev/video8
+```
+
 
 hobot_usb_cam.launch.py配置默认输出640x480分辨率mjpeg格式图像，发布的话题名称为`/image`。
 
@@ -59,8 +77,16 @@ hobot_usb_cam.launch.py配置默认输出640x480分辨率mjpeg格式图像，发
 
 打开一个新的终端，启动如下命令：
 
+tros foxy 版本
 ```shell
 source /opt/tros/local_setup.bash
+# 启动websocket
+ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocket_only_show_image:=true
+```
+
+tros humble 版本
+```shell
+source /opt/tros/humble/local_setup.bash
 # 启动websocket
 ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocket_only_show_image:=true
 ```
