@@ -21,18 +21,34 @@ Connect the USB camera to the USB slot on the RDK.
 
 After starting the RDK, connect to the RDK via terminal or VNC, copy and run the following command on the RDK system to install the relevant nodes.
 
+tros foxy:
 ```bash
 sudo apt update
 sudo apt install -y tros-hobot-usb-cam
+```
+
+tros humble:
+```bash
+sudo apt update
+sudo apt install -y tros-humble-hobot-usb-cam
 ```
 
 ## Publish Images using USB Camera
 
 Run the following command in the terminal of the RDK system to start the connected camera:
 
+tros foxy:
 ```bash
 # Configure the tros.b environment:
 source /opt/tros/setup.bash
+# Launch with specified USB camera device name /dev/video8
+ros2 launch hobot_usb_cam hobot_usb_cam.launch.py usb_video_device:=/dev/video8
+```
+
+tros humble:
+```bash
+# Configure the tros.b humble environment:
+source /opt/tros/humble/setup.bash
 # Launch with specified USB camera device name /dev/video8
 ros2 launch hobot_usb_cam hobot_usb_cam.launch.py usb_video_device:=/dev/video8
 ```
@@ -58,8 +74,16 @@ Here we use the web interface to visualize the image. Open a new terminal for pu
 
 In a new terminal, start the following commands:
 
+tros foxy:
 ```shell
 source /opt/tros/local_setup.bash
+# Start websocket
+ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocket_only_show_image:=true
+```
+
+tros humble:
+```shell
+source /opt/tros/humble/local_setup.bash
 # Start websocket
 ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocket_only_show_image:=true
 ```
