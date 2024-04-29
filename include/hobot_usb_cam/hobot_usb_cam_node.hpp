@@ -44,7 +44,6 @@
 
 #include "hobot_usb_cam/hobot_usb_cam.hpp"
 #include "sensor_msgs/msg/camera_info.hpp"
-#include "hb_mem_mgr.h"
 #include "hbm_img_msgs/msg/hbm_msg1080_p.hpp"
 
 #if ngy
