@@ -131,6 +131,7 @@ void HobotUsbCamNode::init()
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
   }
 
+#if 0
   // Check if given device name is an available v4l2 device
   auto available_devices = usb_cam::utils::available_devices();
   if (available_devices.find(m_parameters.device_name) == available_devices.end()) {
@@ -147,6 +148,7 @@ void HobotUsbCamNode::init()
     rclcpp::shutdown();
     return;
   }
+#endif
 
   // if pixel format is equal to 'mjpeg', i.e. raw mjpeg stream, initialize compressed image message
   // and publisher
