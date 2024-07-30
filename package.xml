@@ -4,7 +4,7 @@
   <name>hobot_usb_cam</name>
   <version>2.2.0</version>
   <description>TogetheROS hobot usb camera</description>
-  <maintainer email="kairui.wang@horizon.ai">kairui</maintainer>
+  <maintainer email="kairui.wang@d-robotics.cc">kairui</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

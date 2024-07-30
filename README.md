@@ -9,7 +9,7 @@ The **hobot_usb_cam** collects image data from a USB camera and publishes it as 
 | Number | Name  | Manufacturer | Reference Link                            |
 | ------ | ------ | ------------ | ----------------------------------------- |
 | 1      | USB Camera | Multiple Manufacturers | Self-selection |
-| 2      | RDK X3 | Multiple Manufacturers | [Click Here](https://developer.horizon.cc/rdkx3) |
+| 2      | RDK X3 | Multiple Manufacturers | [Click Here](https://developer.d-robotics.cc/rdkx3) |
 
 # Instructions for Use
 
@@ -88,7 +88,7 @@ source /opt/tros/humble/local_setup.bash
 ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocket_only_show_image:=true
 ```
 
-Open a web browser on the same network computer, visit the IP address (type http://IP:8000 in the browser, where IP is the Horizon RDK IP address), then click on `Web Display` on the top left to see the real-time image output from the USB camera:
+Open a web browser on the same network computer, visit the IP address (type http://IP:8000 in the browser, where IP is the RDK IP address), then click on `Web Display` on the top left to see the real-time image output from the USB camera:
      ![web_usb](./image/web_usb.png "Real-time Image")
 
 
@@ -101,7 +101,7 @@ Open a web browser on the same network computer, visit the IP address (type http
 | ------------ | ------------------------------------  | -------------------------------------------------|
 | /camera_info | sensor_msgs/msg/CameraInfo           | Camera intrinsics topic published based on the camera calibration file set |
 | /image_raw   | sensor_msgs/msg/Image                | Periodically published image topic in JPEG format |
-| /hbmem_image | [hbm_img_msgs/msg/HbmMsg1080P](https://github.com/HorizonRDK/hobot_msgs/blob/develop/hbm_img_msgs/msg/HbmMsg1080P.msg) | Image topic based on shared memory, in JPEG format |
+| /hbmem_image | [hbm_img_msgs/msg/HbmMsg1080P](https://github.com/D-Robotics/hobot_msgs/blob/develop/hbm_img_msgs/msg/HbmMsg1080P.msg) | Image topic based on shared memory, in JPEG format |
 
 ## Parameters
 | Parameter Name | Description                | Type   | Supported Configurations         | Required | Default Value       |

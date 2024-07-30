@@ -9,7 +9,7 @@ hobot_usb_cam从USB摄像头采集图像数据，以ROS标准图像消息或者�
 | 序号 | 名称   | 生产厂家 | 参考链接                                                     |
 | ---- | ------ | -------- | ------------------------------------------------------------ |
 | 1    | USB摄像头    | 多厂家 | 自行选择 |
-| 2    | RDK X3 | 多厂家 | [点击跳转](https://developer.horizon.cc/rdkx3) |
+| 2    | RDK X3 | 多厂家 | [点击跳转](https://developer.d-robotics.cc/rdkx3) |
 
 # 使用方法
 
@@ -90,7 +90,7 @@ source /opt/tros/humble/local_setup.bash
 ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocket_only_show_image:=true
 ```
 
-打开同一网络电脑的浏览器，访问IP地址（浏览器输入http://IP:8000，IP为地平线RDK IP地址），点击左上方`Web 展示端`即可看到USB摄像头输出的实时画面：
+打开同一网络电脑的浏览器，访问IP地址（浏览器输入http://IP:8000，IP为RDK IP地址），点击左上方`Web 展示端`即可看到USB摄像头输出的实时画面：
      ![web_usb](./image/web_usb.png "实时图像")
 
 
@@ -103,7 +103,7 @@ ros2 launch websocket websocket.launch.py websocket_image_topic:=/image websocke
 | ------------ | ------------------------------------ | ---------------------------------------- |
 | /camera_info | sensor_msgs/msg/CameraInfo           | 相机内参话题，根据设置的相机标定文件发布 |
 | /image_raw   | sensor_msgs/msg/Image                | 周期发布的图像话题，jpeg格式             |
-| /hbmem_image   | [hbm_img_msgs/msg/HbmMsg1080P](https://github.com/HorizonRDK/hobot_msgs/blob/develop/hbm_img_msgs/msg/HbmMsg1080P.msg) | 基于共享内存share mem的图像话题，jpeg格式        |
+| /hbmem_image   | [hbm_img_msgs/msg/HbmMsg1080P](https://github.com/D-Robotics/hobot_msgs/blob/develop/hbm_img_msgs/msg/HbmMsg1080P.msg) | 基于共享内存share mem的图像话题，jpeg格式        |
 
 ## 参数
 | 参数名      | 解释             | 类型   | 支持的配置                 | 是否必须 | 默认值             |
