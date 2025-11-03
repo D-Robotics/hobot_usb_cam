@@ -103,7 +103,7 @@ public:
       3,
       8,
       true),
-    m_avcodec(avcodec_find_decoder(AVCodecID::AV_CODEC_ID_MJPEG)),
+    m_avcodec(const_cast<AVCodec*>(avcodec_find_decoder(AVCodecID::AV_CODEC_ID_MJPEG))),
     m_avparser(av_parser_init(AVCodecID::AV_CODEC_ID_MJPEG)),
     m_avframe_device(av_frame_alloc()),
     m_avframe_rgb(av_frame_alloc()),
