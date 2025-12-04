@@ -59,7 +59,12 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(hbm_img_msgs REQUIRED)
-find_package(yaml_cpp_vendor REQUIRED)
+#find_package(yaml_cpp_vendor REQUIRED)
+#find_package(yaml-cpp REQUIRED)
+pkg_check_modules(yaml-cpp REQUIRED yaml-cpp)
+if(EXISTS ${yaml-cpp})
+  message(STATUS "Found libavcodec: ${yaml-cpp}")
+endif()
 #find_package(std_srvs REQUIRED)
 
 # find_package(v4l-utils)
@@ -84,7 +89,8 @@ target_link_libraries(${PROJECT_NAME}
   ${avutil_LIBRARIES}
   ${swscale_LIBRARIES}
   ${OpenCV_LIBRARIES})
-ament_target_dependencies(${PROJECT_NAME} rclcpp sensor_msgs hbm_img_msgs  yaml_cpp_vendor std_srvs)
+#ament_target_dependencies(${PROJECT_NAME} rclcpp sensor_msgs hbm_img_msgs  yaml_cpp_vendor std_srvs)
+ament_target_dependencies(${PROJECT_NAME} rclcpp sensor_msgs hbm_img_msgs  yaml-cpp std_srvs)
 # target_include_directories((${PROJECT_NAME} PUBLIC
 #   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 #   $<INSTALL_INTERFACE:include>))
