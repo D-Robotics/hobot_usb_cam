@@ -15,7 +15,7 @@
   <depend>sensor_msgs</depend>
   <depend>hbm_img_msgs</depend>
   <depend>v4l-utils</depend>
-  <depend>yaml_cpp_vendor</depend>
+  <depend>yaml-cpp</depend>
   <!-- Only required for MJPEG to RGB converison -->
   <depend>ffmpeg</depend>
   <member_of_group>rosidl_interface_packages</member_of_group>
